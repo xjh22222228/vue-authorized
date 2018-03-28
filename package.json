@@ -1,6 +1,6 @@
 {
   "name": "vue-cnode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vue.js构建第三方cnode社区网站",
   "author": "XieJiaHe <mb06@qq.com>",
   "private": true,

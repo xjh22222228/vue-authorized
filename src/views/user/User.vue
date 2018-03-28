@@ -65,6 +65,12 @@ export default {
                 this.$router.replace('/');
             })
         }
+    },
+    watch: {
+        $route (to, from) {
+            if( to.name !== 'User' ) return;
+            this.fetchUserDetail();
+        }
     }
 }
 </script>
