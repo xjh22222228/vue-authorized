@@ -73,7 +73,7 @@
 
 <script>
 import SimpleMDE from 'simplemde'
-import API_CONFIG from '../../api'
+import API_CONFIG from '@/api'
 import { mapState } from 'vuex'
 export default {
     name: 'Topic',
@@ -161,7 +161,7 @@ export default {
             if( !val ) return this.$Message.warning('内容不能为空!');
             this.insertBtnText = '发送中...';
             axios.post(`${API_CONFIG.replies}${this.detail.id}/replies`, {
-                content: val,
+                content: `${val}   \n\n\n[来自第三方vue-cnode](https://github.com/xjh22222228/vue-cnode)`,
             })
             .then(res => {
                 if( res.data.success ) {
@@ -240,7 +240,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/_variable.scss";
+@import "@/assets/scss/_variable.scss";
 .topic {
 
     .detail {

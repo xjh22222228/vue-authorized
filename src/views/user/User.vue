@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import API_CONFIG from '../../api'
+import API_CONFIG from '@/api'
 export default {
     name: 'User',
     data () {
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/_variable.scss";
+@import "@/assets/scss/_variable.scss";
 .user {
 
     .box {

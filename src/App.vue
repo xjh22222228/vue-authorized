@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="xiejiahe">
 		<div class="progress" :class="{actve: start, end: end}">
 			<div class="rotate-loading"></div>
 			<div class="progress-forward"></div>
@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
+import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
 export default {
 	name: 'App',
 	components: {
@@ -199,10 +199,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss">
-@import "./assets/scss/_variable.scss";
-
-
-
-</style>

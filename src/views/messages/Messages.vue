@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import API_CONFIG from '../../api'
-import Msg from '../../components/msg/Msg'
+import API_CONFIG from '@/api'
+import Msg from '@/components/msg/Msg'
 export default {
     name: 'Messages',
     components: {
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/_variable.scss";
+@import "@/assets/scss/_variable.scss";
 .messages {
     
     .top {

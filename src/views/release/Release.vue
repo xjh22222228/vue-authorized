@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import API_CONFIG from '../../api'
+import API_CONFIG from '@/api'
 import SimpleMDE from 'simplemde'
 import { mapState } from 'vuex'
 export default {
@@ -133,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/_variable.scss";
+@import "@/assets/scss/_variable.scss";
 .release {
 
     .release-left {
