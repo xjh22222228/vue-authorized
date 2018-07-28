@@ -28,7 +28,7 @@ react版cnode[点击这里](https://github.com/xjh22222228/react-cnode)
 "vue": "^2.5.16",
 "vue-router": "^3.0.1",
 "vuex": "^3.0.1"
-"iview": "^3.0.0",
+"iview": "^2.14.0",
 "axios": "^0.18.1",
 "moment": "^2.20.1",
 "simplemde": "^1.11.2",
