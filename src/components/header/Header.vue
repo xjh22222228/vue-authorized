@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header-box">
             <router-link to="/" class="logo user-select-none">
-                <img src="http://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" alt="logo" />
+                <img src="https://xjh22222228.github.io/nav/assets/icon/frontend/065.svg" alt="logo" />
             </router-link>
             <nav class="nav">
                 <router-link to="/">首页</router-link>
@@ -49,7 +49,7 @@ export default {
         float: left;
 
         img {
-            width: 125px;
+            width: 30px;
             pointer-events: none;
         }
     }
