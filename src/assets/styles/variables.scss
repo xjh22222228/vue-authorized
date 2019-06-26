@@ -1,0 +1,46 @@
+
+@mixin center($x: center, $y: center) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+
+@mixin user-select-none() {
+  user-select: none;
+}
+
+
+
+// 宽度
+$width: 1150px;
+// 侧边栏宽度
+$sidebar-width: 290px;
+// 盒子顶部颜色
+$box-top-color: #f6f6f6;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

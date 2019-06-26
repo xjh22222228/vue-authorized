@@ -1,35 +1,37 @@
+const moment = require('moment');
 const path = require('path');
 
-
-const addZero = function (n) {
-  return Number(n) < 10 ? '0' + n : n;
-};
-
-const date = new Date();
-const year = date.getFullYear();
-const month = addZero(date.getMonth() + 1);
-const day = addZero(date.getDate());
-const hours = addZero(date.getHours());
-const minutes = addZero(date.getMinutes());
-const getFullDate = `${year}${month}${day}${hours}${minutes}`;
+const buildDate = moment().format('YYYYMMDDhhmmss');
 
 module.exports = {
-  baseUrl: './',
+  publicPath: './',
   productionSourceMap: false,
   css: {
     extract: {
-      filename: `css/[name].${getFullDate}.css`,
-      chunkFilename: `css/[name].${getFullDate}.css`,
+      filename: `css/[name].${buildDate}.css`,
+      chunkFilename: `css/[name].${buildDate}.css`,
     },
   },
   configureWebpack: {
     output: {
-      filename: `js/[name].${getFullDate}.js`,
-      chunkFilename: `js/[name].${getFullDate}.js`,
+      filename: `js/[name].${buildDate}.js`,
+      chunkFilename: `js/[name].${buildDate}.js`,
     },
   },
   devServer: {
     port: 3888,
     open: true,
+  },
+  chainWebpack: config => {
+    const oneOfsMap = config.module.rule('scss').oneOfs.store
+    oneOfsMap.forEach(item => {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          resources: path.resolve(__dirname, './src/assets/styles/variables.scss'),
+        })
+        .end()
+    })
   }
 }

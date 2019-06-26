@@ -1,20 +1,19 @@
 
 
+## vue-cnode
+本项目非常适合新手入门或对vue3特性感兴趣的同学
 
-> vue构建的第三方cnode社区网站 - vue-cli 3.x
-
-
-react版cnode[点击这里](https://github.com/xjh22222228/react-cnode)
-
-
-
-[源码github](https://github.com/xjh22222228/vue-cnode)
+- 基于 function-based API 进行改造，优先体验vue3特性
+- 使用Vue observable API代替vuex作为状态管理
+- 对项目进行了优化，新手入门更容易
 
 
+
+## 预览
 [在线预览](https://xjh22222228.github.io/vue-cnode/index.html)
 
 
-![](https://raw.githubusercontent.com/xjh22222228/vue-cnode/master/public/img/animate.gif)
+![](https://raw.githubusercontent.com/xjh22222228/vue-cnode/master/public/img/screen.gif)
 
 
 
@@ -23,49 +22,41 @@ react版cnode[点击这里](https://github.com/xjh22222228/react-cnode)
 
 
 
-## 技术栈
+## 开发技术
 ```
-"vue": "^2.5.16",
-"vue-router": "^3.0.1",
+"vue": "^2.6.10",
+"vue-router": "^3.0.3",
 "vuex": "^3.0.1"
-"iview": "^2.14.0",
-"axios": "^0.18.1",
-"moment": "^2.20.1",
+"iview": "^3.4.2",
+"axios": "^0.19.0",
+"moment": "^2.24.0",
 "simplemde": "^1.11.2",
-"highlight": "^9.12.0",
-"scss",
-"ES6",
-"flex",
+"highlight.js": "^9.15.8",
+"vue-function-api": "^2.0.5"
 ```
 
-## 目录架构
-```
+## 目录结构
+```bash
 .
-├── LICENSE
-├── README.md
-├── babel.config.js
-├── package.json
-├── public                               # 静态资源
-│   ├── favicon.ico
-│   ├── img
-│   │   └── animate.gif
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
-├── src                                  # 开发目录
-│   ├── App.vue                          # 跟组件入口
-│   ├── api                              # 接口配置
+├── src
+│   ├── App.vue                          # 组件入口
+│   ├── api                              # 接口
 │   │   └── index.js
-│   ├── assets                           # 静态资源，webpack会处理此目录资源
-│   │   ├── images
+│   ├── assets                           # 资源目录
+│   │   ├── img
 │   │   │   ├── app-qrcode.png
 │   │   │   ├── github.svg
 │   │   │   └── not-match.gif
-│   │   └── scss
-│   │       ├── _variable.scss
+│   │   └── styles
+│   │       ├── global.scss
+│   │       ├── hljs.css
+│   │       ├── markdown.css
 │   │       ├── media.scss
-│   │       └── style.scss
-│   ├── components                       # 组件
+│   │       ├── nprogress.css
+│   │       ├── simplemde.css
+│   │       ├── style.scss
+│   │       └── variables.scss
+│   ├── components
 │   │   ├── footer
 │   │   │   └── Footer.vue               # 页脚
 │   │   ├── header
@@ -76,13 +67,19 @@ react版cnode[点击这里](https://github.com/xjh22222228/react-cnode)
 │   │   │   └── Sidebar.vue              # 侧边栏
 │   │   └── topics-list
 │   │       └── TopicsList.vue           # 话题列表
-│   ├── main.js                          # 程序主入口
-│   ├── registerServiceWorker.js         # 主要是用于缓存作用
-│   ├── router                           # 路由配置
-│   │   └── index.js
-│   ├── store                            # 状态数据管理
-│   │   └── index.js
-│   └── views                            # 页面目录
+│   ├── constants
+│   │   └── index.js                     # 常量
+│   ├── main.js                          # 程序入口
+│   ├── router
+│   │   └── index.js                     # 路由配置
+│   ├── services
+│   │   └── index.js                     # 服务接口
+│   ├── store
+│   │   └── index.js                     # 状态管理
+│   ├── utils
+│   │   ├── http.js                      # http请求
+│   │   └── nprogress.js                 # 进度条
+│   └── views
 │       ├── 404
 │       │   └── 404.vue                  # 404
 │       ├── collections
@@ -100,7 +97,6 @@ react版cnode[点击这里](https://github.com/xjh22222228/react-cnode)
 │       └── user
 │           └── User.vue                 # 用户详情页/个人主页
 ├── vue.config.js                        # vue-cli 配置文件
-└── yarn.lock
 ```
 
 
@@ -143,22 +139,10 @@ yarn build or npm run build
 ----
 
 
-## 写在最后
-这个项目对新手或进阶都是有帮助的，我认为这是一个非常好的学习机会。如果你认为这是一个非常不错的进阶项目，那么你可以分享给他人。
 
-markdown样式可以使用[github-markdown-css](https://github.com/sindresorhus/github-markdown-css)，github-markdown风格，
-
-markdown编辑器推荐 [simplemde](https://github.com/sparksuite/simplemde-markdown-editor) ，我觉得非常好用，并且他的样式挺好看的。
-
-本项目预览结果托管在github pages上，所以首次访问会稍微慢。
-
-
-...
 
 👍👍👍
 
-
-----
 
 
 ## License
