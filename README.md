@@ -1,9 +1,9 @@
+> 2020-06-14 由于vue3的频繁变更，这个项目已经很老了，项目仅供参考，本项目不会再维护。
 
 
 ## vue-cnode
-本项目非常适合新手入门或对vue3特性感兴趣的同学
 
-- 基于 function-based API 进行改造，优先体验vue3特性
+- 基于 function-based API 进行改造
 - 使用Vue observable API代替vuex作为状态管理
 - 对项目进行了优化，新手入门更容易
 
