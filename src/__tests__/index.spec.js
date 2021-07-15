@@ -16,7 +16,7 @@ describe('<Authorized />', () => {
 
 
   describe('Test <Authorized />', () => {
-    test('1.test authority prop', () => {
+    test('1(Have permission).test authority prop', () => {
       const wrapper = mount(Authorized, {
         props: {
           authority: 'user:add'
@@ -29,7 +29,7 @@ describe('<Authorized />', () => {
       expect(wrapper.text()).toBe('hello')
     })
 
-    test('2.test authority prop', () => {
+    test('2(Have permission).test authority prop', () => {
       const wrapper = mount(Authorized, {
         props: {
           authority: ['user:add', 'abc']
@@ -42,7 +42,7 @@ describe('<Authorized />', () => {
       expect(wrapper.text()).toBe('hello')
     })
 
-    test('3.test authority prop', () => {
+    test('3(No permission).test authority prop', () => {
       const wrapper = mount(Authorized, {
         props: {
           authority: ['abc']
@@ -54,10 +54,24 @@ describe('<Authorized />', () => {
 
       expect(wrapper.text()).toBe('')
     })
+
+    test('4(No permission).test authority prop', () => {
+      const wrapper = mount(Authorized, {
+        props: {
+          authority: ['abc']
+        },
+        slots: {
+          default: 'hello',
+          'no-match': '<span>hello</span>',
+        },
+      })
+
+      expect(wrapper.html()).toBe('<span>hello</span>')
+    })
   })
 
-  describe('test checked', () => {
-    test('1. checked', () => {
+  describe('Test checked', () => {
+    test('1. Authorized.checked', () => {
       expect(Authorized.checked('user:add')).toBe(true)
       expect(Authorized.checked('user:add1')).toBe(false)
       expect(Authorized.checked('')).toBe(true)

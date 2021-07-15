@@ -84,6 +84,22 @@ export default defineComponent({
 ```
 
 
+接收插槽 `no-match` 没有权限的情况下显示内容：
+```vue
+<template>
+  <Authorized
+    authority="user:add"
+  >
+    <div>有权限则显示</div>
+
+    <template v-slot:no-match>
+      无权限
+    </template>
+  </Authorized>
+</template>
+```
+
+
 
 ## LICENSE
 [MIT](./LICENSE)

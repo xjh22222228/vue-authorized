@@ -4,6 +4,9 @@
   <template v-if="hasPerm">
     <slot></slot>
   </template>
+  <template v-else>
+    <slot name="no-match"></slot>
+  </template>
 </template>
 
 <script lang="ts">

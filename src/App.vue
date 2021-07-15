@@ -3,6 +3,12 @@
     <button>add</button>
   </Authorized>
 
+  <Authorized authority="user:add1">
+    <template v-slot:no-match>
+      no-match
+    </template>
+  </Authorized>
+
 
 
   <hr />
