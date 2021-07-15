@@ -1,0 +1,44 @@
+{
+  "name": "vue-authorized",
+  "version": "1.0.0-beta.1",
+  "description": "Vue authorized",
+  "main": "./Authorized.common.js",
+  "homepage": "https://github.com/xjh22222228/vue-authorized",
+  "bugs": {
+    "url": "https://github.com/xjh22222228/vue-authorized/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjh22222228/vue-authorized.git"
+  },
+  "keywords": [
+    "authorized",
+    "vue-authorized",
+    "ABAC"
+  ],
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --dest dist --name Authorized 'src/Authorized/index.ts'",
+    "test": "jest __tests__",
+    "release": "node scripts/release.js"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/jest": "^26.0.24",
+    "@vue/babel-plugin-jsx": "^1.0.6",
+    "@vue/cli-plugin-typescript": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "@vue/compiler-sfc": "^3.1.4",
+    "@vue/test-utils": "^2.0.0-rc.10",
+    "babel-jest": "^26.3.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "~3.9.3",
+    "vue": "^3.1.4",
+    "vue-jest": "^5.0.0-alpha.10",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
