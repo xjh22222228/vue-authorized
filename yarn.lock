@@ -9540,6 +9540,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
+vue-authorized@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/vue-authorized/-/vue-authorized-1.0.0-beta.1.tgz#fc52b71b7a25eae24523e927eb22e3a6f94b1e42"
+  integrity sha512-iUaIHvkdnXQcIzMFvnWgJCd9H/fA6EQjgXvXY0jj07wBe+KRRN1rvdsXrZgT2Fo9rn8K3fMYncb4jauWP5+eBg==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

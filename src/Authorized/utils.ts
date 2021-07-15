@@ -18,14 +18,16 @@ export function handleSetPermissions(pers: unknown[]) {
 
 // Check permissions
 // Return to target if it fails
-export function checkedPermission<Target = any>(
+export function checkedPermission<Target = unknown>(
   authority: IAuthority,
-  target: Target
-): Target | false {
+  target: Target,
+): Target | boolean {
 
-  target = (target ?? true) as any
+  if (target === undefined) {
+    target = true as any
+  }
 
-  // No permissions specified
+  // falsy: No permissions specified
   if (!authority) {
     return target
   }

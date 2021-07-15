@@ -2,27 +2,46 @@
   <Authorized authority="user:add">
     <button>add</button>
   </Authorized>
+
+
+
+  <hr />
+  <div>production:</div>
+
+  <!-- npm production -->
+  <AuthorizedProd authority="user:add">
+    <button>add</button>
+  </AuthorizedProd>
+
+  <AuthorizedProd authority="123">
+    <button>No Show</button>
+  </AuthorizedProd>
 </template>
 
 <script type="setup">
-import Authorized, { setPermissions } from './Authorized'
+import Authorized from './Authorized'
+
+import AuthorizedProd from 'vue-authorized'
 
 export default {
   name: 'App',
 
   components: {
     Authorized,
+    AuthorizedProd
   },
 
   setup() {
+    const pers = [
+      'user:add',
+      'user:del',
+      'user:modify'
+    ]
     setTimeout(() => {
-      const pers = [
-        'user:add',
-        'user:del',
-        'user:modify'
-      ]
-      setPermissions(pers)
+      Authorized.setPermissions(pers)
     }, 1000)
+
+    AuthorizedProd.setPermissions(pers)
   },
 };
 </script>

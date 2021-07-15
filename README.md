@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="media/logo.png" width="350">
   <p align="center">用于Vue3, 基于 ABAC 权限验证</p>
   <p align="center">
     <img src="https://img.shields.io/github/package-json/v/xjh22222228/vue-authorized" />
-    <img src="https://img.shields.io/static/v1.svg?label=&message=Vue&style=flat-square&color=3fb984" />
+    <img src="https://img.shields.io/static/v1.svg?label=&message=Vue3&style=flat-square&color=3fb984" />
     <img src="https://img.shields.io/github/license/xjh22222228/vue-authorized" />
   </p>
 </p>
@@ -15,7 +14,7 @@
 ```bash
 npm i vue-authorized -S
 # or
-yarn vue-authorized
+yarn add vue-authorized
 ```
 
 

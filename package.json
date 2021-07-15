@@ -38,6 +38,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "~3.9.3",
     "vue": "^3.1.4",
+    "vue-authorized": "^1.0.0-beta.1",
     "vue-jest": "^5.0.0-alpha.10",
     "vue-template-compiler": "^2.6.14"
   }
