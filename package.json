@@ -1,6 +1,6 @@
 {
   "name": "vue-authorized",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Vue authorized",
   "main": "./Authorized.common.js",
   "homepage": "https://github.com/xjh22222228/vue-authorized",
