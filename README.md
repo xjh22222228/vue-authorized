@@ -21,6 +21,8 @@ yarn add vue-authorized
 ## 使用
 
 一个典型的例子：
+
+`authority` 参数接收 `string`/`Array`/`number`/`boolean` , 如果是数组则有任意一个匹配则验证通过
 ```vue
 <template>
   <Authorized

@@ -35,8 +35,8 @@ export function checkedPermission<Target = unknown>(
   if (
     typeof authority === 'string' ||
     typeof authority === 'boolean' ||
-    typeof authority === 'undefined' ||
-    authority === null
+    // null|undefined
+    authority == null
   ) {
     if (persMap.has(authority)) {
       return target
