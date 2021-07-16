@@ -6,7 +6,8 @@ const mockPerm = [
   true,
   false,
   undefined,
-  null
+  null,
+  123
 ]
 
 describe('<Authorized />', () => {
@@ -67,6 +68,31 @@ describe('<Authorized />', () => {
       })
 
       expect(wrapper.html()).toBe('<span>hello</span>')
+    })
+
+    test('5(No permission).test no-match event', () => {
+      const wrapper = mount(Authorized, {
+        props: {
+          authority: '3333333'
+        }
+      })
+      expect(wrapper.emitted()).toHaveProperty('no-match')
+    })
+
+    test('6(No permission).test no-match event', () => {
+      Authorized.setPermissions(null)
+      const wrapper = mount(Authorized)
+      expect(wrapper.emitted()).toHaveProperty('no-match')
+    })
+
+    test('7(No permission).test no-match event', async () => {
+      Authorized.setPermissions(null)
+      const wrapper = mount(Authorized, {
+        props: {
+          authority: 123
+        }
+      })
+      expect(wrapper.emitted()).toHaveProperty('no-match')
     })
   })
 

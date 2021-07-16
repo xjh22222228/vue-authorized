@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, watch, ref } from 'vue'
-import { permssions } from './reactive'
+import { permssions, persMap } from './reactive'
 import { IAuthority } from './type'
 import { checkedPermission } from './utils'
 
@@ -27,21 +27,27 @@ export default defineComponent({
   setup(props, ctx) {
     const hasPerm = ref(checkedPermission(props.authority))
 
-    // trigger `no-match` event
+    // 提前加载权限，非异步
+    if (!permssions.hasPermission || (!hasPerm.value && persMap.size > 0)) {
+      ctx.emit('no-match', props.authority)
+    }
+
+    // watch: trigger `no-match` event
     watch(
       () => permssions.hasPermission,
       (hasPermission) => {
         if (!hasPermission) {
-          ctx.emit('no-match')
+          ctx.emit('no-match', props.authority)
         }
       }
     )
 
+    // watch: trigger `no-match` event
     watch([() => permssions.value, () => props.authority], () => {
       hasPerm.value = checkedPermission(props.authority)
 
       if (!hasPerm.value) {
-        ctx.emit('no-match')
+        ctx.emit('no-match', props.authority)
       }
     })
 

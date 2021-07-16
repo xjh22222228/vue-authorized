@@ -8,6 +8,7 @@ export function handleSetPermissions(pers: unknown[] | null) {
   // No permissions
   if (pers === null) {
     permssions.hasPermission = false
+    persMap.clear()
     return
   }
 
@@ -46,6 +47,7 @@ export function checkedPermission(
   if (
     typeof authority === 'string' ||
     typeof authority === 'boolean' ||
+    typeof authority === 'number' ||
     // null|undefined
     authority == null
   ) {

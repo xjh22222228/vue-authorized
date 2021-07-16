@@ -1,5 +1,5 @@
 <template>
-  <Authorized authority="user:add">
+  <Authorized authority="user:add" @no-match="handleNoMatch">
     <button>add</button>
   </Authorized>
 
@@ -43,14 +43,11 @@ export default {
       'user:del',
       'user:modify'
     ]
-    setTimeout(() => {
-      Authorized.setPermissions(pers)
-    }, 1000)
-
+    Authorized.setPermissions(pers)
     AuthorizedProd.setPermissions(pers)
 
-    function handleNoMatch() {
-      console.log('no match')
+    function handleNoMatch(authority) {
+      console.log('no match', authority)
     }
 
     return {
