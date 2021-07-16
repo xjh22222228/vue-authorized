@@ -19,7 +19,6 @@ yarn add vue-authorized
 
 
 ## 使用
-
 一个典型的例子：
 
 `authority` 参数接收 `string`/`Array`/`number`/`boolean` , 如果是数组则有任意一个匹配则验证通过
@@ -42,7 +41,6 @@ export default defineComponent({
   },
 
   setup() {
-    
     // 通常情况从API取得权限集
     fetch('/permissions').then(res => {
       // ['user:add', 'user:del', ...]
@@ -100,6 +98,35 @@ export default defineComponent({
   </Authorized>
 </template>
 ```
+
+
+无权限传入 `null`, 请不要传入空数组，因为权限集可能是异步加载，可能会导致触发2次事件等其他BUG
+```vue
+<script lang="ts">
+import Authorized from 'vue-authorized'
+
+// Good
+Authorized.setPermissions(null)
+
+// Bad
+Authorized.setPermissions([])
+```
+
+
+
+
+
+## 属性
+| 参数           | 描述              |类型           | 默认值              |是否必填   |
+| ------------- |------------------- |-------------- |------ |
+| authority | 校验是否有权限 | `string`/`boolean`/`number`/`unknow[]` | - | 否 |
+
+
+
+## 事件
+| 参数           | 描述              |
+| ------------- |------------------- |
+| no-match | 权限校验不通过触发 | 
 
 
 

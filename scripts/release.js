@@ -7,5 +7,6 @@ function resolve(_path) {
 
 fs.unlinkSync(resolve('./dist/demo.html'))
 fs.copyFileSync(resolve('package.json'), resolve('./dist/package.json'))
+fs.copyFileSync(resolve('README.md'), resolve('./dist/README.md'))
 fs.copyFileSync(resolve('yarn.lock'), resolve('./dist/yarn.lock'))
 fs.copyFileSync(resolve('LICENSE'), resolve('./dist/LICENSE'))

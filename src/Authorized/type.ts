@@ -2,11 +2,12 @@
 
 export type IReactive = {
   value: unknown[]
+  hasPermission: boolean
 }
 
 export type IAuthority =
   | string
   | number
-  | undefined
-  | null
   | unknown[]
+  | null
+  | undefined

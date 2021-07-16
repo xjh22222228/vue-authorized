@@ -3,7 +3,14 @@
 import { permssions, persMap } from './reactive'
 import { IAuthority } from './type'
 
-export function handleSetPermissions(pers: unknown[]) {
+// 没有权限则传入 null
+export function handleSetPermissions(pers: unknown[] | null) {
+  // No permissions
+  if (pers === null) {
+    permssions.hasPermission = false
+    return
+  }
+
   if (!Array.isArray(pers)) {
     return
   }
@@ -13,18 +20,22 @@ export function handleSetPermissions(pers: unknown[]) {
     persMap.set(pers[i], true)
   }
 
+  if (pers.length > 0) {
+    permssions.hasPermission = true
+  }
+
   permssions.value = pers
 }
 
 // Check permissions
-// Return to target if it fails
-export function checkedPermission<Target = unknown>(
+// Return target
+export function checkedPermission(
   authority: IAuthority,
-  target: Target,
-): Target | boolean {
+  target = true,
+): any {
 
   if (target === undefined) {
-    target = true as any
+    target = true
   }
 
   // falsy: No permissions specified

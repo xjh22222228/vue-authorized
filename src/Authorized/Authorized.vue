@@ -18,15 +18,31 @@ import { checkedPermission } from './utils'
 export default defineComponent({
   name: 'Authorized',
 
+  emits: ['no-match'],
+
   props: {
-    authority: [String, Array, Boolean, Number] as PropType<IAuthority>
+    authority: [String, Array, Boolean, Number] as PropType<IAuthority>,
   },
 
-  setup(props) {
-    const hasPerm = ref(checkedPermission(props.authority, true))
+  setup(props, ctx) {
+    const hasPerm = ref(checkedPermission(props.authority))
 
-    watch([permssions, () => props.authority], () => {
-      hasPerm.value = checkedPermission(props.authority, true)
+    // trigger `no-match` event
+    watch(
+      () => permssions.hasPermission,
+      (hasPermission) => {
+        if (!hasPermission) {
+          ctx.emit('no-match')
+        }
+      }
+    )
+
+    watch([() => permssions.value, () => props.authority], () => {
+      hasPerm.value = checkedPermission(props.authority)
+
+      if (!hasPerm.value) {
+        ctx.emit('no-match')
+      }
     })
 
     return {

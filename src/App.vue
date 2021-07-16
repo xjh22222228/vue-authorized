@@ -3,7 +3,7 @@
     <button>add</button>
   </Authorized>
 
-  <Authorized authority="user:add1">
+  <Authorized authority="user:add1" @no-match="handleNoMatch">
     <template v-slot:no-match>
       no-match
     </template>
@@ -48,6 +48,14 @@ export default {
     }, 1000)
 
     AuthorizedProd.setPermissions(pers)
+
+    function handleNoMatch() {
+      console.log('no match')
+    }
+
+    return {
+      handleNoMatch
+    }
   },
 };
 </script>
