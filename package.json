@@ -1,6 +1,6 @@
 {
   "name": "vue-authorized",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vue authorized",
   "main": "./Authorized.common.js",
   "homepage": "https://github.com/xjh22222228/vue-authorized",
@@ -38,7 +38,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "~3.9.3",
     "vue": "^3.1.4",
-    "vue-authorized": "^1.0.0",
+    "vue-authorized": "^1.1.0",
     "vue-jest": "^5.0.0-alpha.10",
     "vue-template-compiler": "^2.6.14"
   }
