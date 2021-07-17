@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Authorized from '../Authorized'
+import { persMap } from '../Authorized/reactive'
 
 const mockPerm = [
   'user:add',
@@ -105,6 +106,22 @@ describe('<Authorized />', () => {
       expect(Authorized.checked()).toBe(true)
       expect(Authorized.checked(false)).toBe(true)
       expect(Authorized.checked(false, null)).toBe(null)
+
+      // 不支持 object
+      try {
+        Authorized.checked({})
+        expect(1).toBe(2) // 如果这行能运行，则程序有问题
+      } catch {}
+    })
+  })
+
+  describe('Test setPermissions', () => {
+    test('1. Authorized.setPermissions', () => {
+      Authorized.setPermissions([1, 2, 3, 4, 5])
+      expect(persMap.size).toBe(5)
+
+      Authorized.setPermissions(null)
+      expect(persMap.size).toBe(0)
     })
   })
 })
