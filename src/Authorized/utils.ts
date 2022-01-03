@@ -6,7 +6,10 @@ import { IAuthority } from './type'
 // 没有权限则传入 null
 export function handleSetPermissions(pers: unknown[] | null) {
   // No permissions
-  if (pers === null) {
+  if (
+    pers === null ||
+    (Array.isArray(pers) && pers.length === 0)
+  ) {
     permssions.hasPermission = false
     persMap.clear()
     return

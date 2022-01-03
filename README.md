@@ -100,15 +100,13 @@ export default defineComponent({
 ```
 
 
-无权限传入 `null`, 请不要传入空数组，因为权限集可能是异步加载，可能会导致触发2次事件等其他BUG
+无权限传入 `null` 或 空数组
 ```vue
 <script lang="ts">
 import Authorized from 'vue-authorized'
 
-// Good
 Authorized.setPermissions(null)
-
-// Bad
+// or
 Authorized.setPermissions([])
 ```
 
